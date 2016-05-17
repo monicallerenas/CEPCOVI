@@ -1,0 +1,593 @@
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+::-moz-selection {
+    background: #f2c2c9;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+::selection {
+    background: #16a085;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.centered {
+	text-align: center;
+}
+
+
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Lato" sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+}
+
+/* ==========================================================================
+   MENU
+   ========================================================================== */
+
+.menu {
+	position: fixed;
+	right: -200px;
+	width: 260px;
+	height: 100%;
+	top: 0;
+	z-index: 10;
+	text-align: left;
+}
+
+.menu.menu-open {
+	right: 0px;
+}
+
+.menu-wrap {
+	position: absolute;
+	top: 0;
+	left: 60px;
+	background: #372C4E;
+	width: 200px;
+	height: 100%;
+}
+
+.menu h1.logo a {
+	font-family: "Oswald", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #F4DDF1;
+	margin-top: 20px;
+}
+
+.menu h1.logo a:hover {
+	color: #D1D759;
+}
+
+.menu img.logo {
+	margin: 20px 0;
+	max-width: 160px;
+}
+
+.menu a {
+	margin-left: 20px;
+	color: #A979A3;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 40px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.menu a:hover {
+	color: #D1D759;
+}
+
+.menu a:active {
+	color: #ffffff;
+}
+
+.menu a > i {
+	float: left;
+	display: inline-block;
+	vertical-align: middle; 
+	text-align: left;
+	width: 25px;
+	font-size: 14px;
+	line-height: 40px;
+	margin: 25px 2px;
+}
+
+.menu-close {
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	font-size: 14px;
+	color: #F4DDF1;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	top: 20px;
+	right: 5px;
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out;
+		 -o-transition: all .1s ease-in-out;
+			transition: all .1s ease-in-out;
+}
+
+.menu-close:hover {
+	color: #D1D759;
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out;
+		 -o-transition: all .1s ease-in-out;
+			transition: all .1s ease-in-out;
+}
+
+/* AFTER BODY */
+.body-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.body-push-toright {
+	left: 200px;
+}
+
+.body-push-toleft {
+	left: -200px;
+}
+
+.menu,
+.body-push {
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		 -o-transition: all .3s ease;
+			transition: all .3s ease;
+}
+
+#menuToggle {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	z-index: 11;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	color: black;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	background: rgb(169,121,163);
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out;
+		 -o-transition: all .1s ease-in-out;
+			transition: all .1s ease-in-out;
+}
+
+#menuToggle:hover {
+	color: #ffffff;
+	background: rgba(0,0,0,0.2);
+	-webkit-transition: all .1s ease-in-out;
+	   -moz-transition: all .1s ease-in-out;
+		-ms-transition: all .1s ease-in-out;
+		 -o-transition: all .1s ease-in-out;
+			transition: all .1s ease-in-out;
+}
+
+
+/* ==========================================================================
+  SECCIONES
+   ========================================================================== */
+
+/* #headerwrap {
+	background: url(../img/back5.jpg) no-repeat center top;
+	margin-top: 0px;
+	padding-top:120px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: 30% 45%;
+	min-height: 700px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+} */
+
+#headerwrap h1 {
+	color:#A979A3;
+	margin-top: 90px;
+	padding-bottom: 30px;
+	letter-spacing: 6px;
+	font-size: 90px;
+	/* font-weight: bold; */
+	text-shadow: 3px 2px 2px #000;
+}
+#logos{
+	margin-top: 13%;
+	padding-bottom: 205px;
+	width: 71%;
+	border-radius: 35%;
+	margin-left: 15%;
+	position: absolute;
+	opacity: .4;
+}
+.vid1{
+	width: 231%;
+	min-height: 400px;
+	margin-top: -22%;
+	margin-left: -64%;
+}
+@media (min-width: 500px) and (max-width: 979px) {
+.vid1{
+	width: 168%;
+	min-height: 400px;
+	margin-top: -22%;
+	margin-left: -64%;
+}
+#logos{
+	margin-top: 15%;
+	width: 45%;
+	border-radius: 35%;
+	margin-left: 25%;
+	position: absolute;
+
+}
+}
+
+#aboutwrap {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.name {
+	text-align: center;
+}
+.name p {
+	font-size: 22px;
+	font-weight: lighter;
+	margin-top: 15px;
+	letter-spacing: 2px;
+}
+
+.name-desc h2 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+	line-height: 1.45;
+	font-weight: 300;
+	color:#894681;
+	margin-bottom: 6%;
+}
+.name-desc h3{
+	font-family: 'Oswald', sans-serif;
+	color:#D1D759;
+	text-decoration: underline;
+}
+
+.circulo {
+  height: 200%;
+  width: 100%;
+  display: table-cell;
+  text-align: center;
+  font-size:30px;
+  vertical-align: middle;
+  border-radius: 100%;
+  background: white;
+  border:5px solid #D1D759;
+  padding: 11%; 
+  color: #483A66; 
+}
+.p_circulo{
+	font-size: 16px;
+	 color:#894681;
+	 text-decoration: none;
+}
+.circulo:hover {
+	background-color: #eee;
+	border-bottom: solid 2px #483A66;
+}
+
+.imagenc{
+	width: 90%;
+    height: 320px;
+    margin-top: -7%;
+    opacity: .8;
+}
+
+/* Separador*/
+.sep {
+	background-attachment: fixed;
+	background-position: 40% 30% !important;
+	background-repeat: no-repeat;
+	height: 250px;
+	position: relative;
+}
+.about {
+	background-image: url(../img/fotos.jpg);
+	background-repeat: repeat-x;
+	height: 300px;
+}
+.imgale{
+	width: 40%;
+	margin-left: 40%;
+}
+
+/* Galeria */
+#portfoliowrap {
+	display: block;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+#portfoliowrap h1 {
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 50px;
+	color: #894681;
+}
+.mt {
+	margin-top: 50px;
+}
+
+.mb {
+	margin-bottom: 60px;
+}
+
+#portfoliowrap i {
+	font-size: 50px;
+	color: #D1D759;
+}
+
+.proc {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: solid 2px transparent;
+	color: #767676;
+}
+ .proc h3{
+ 	color:#483A66;
+ }
+
+#portfoliowrap .proc:hover {
+	background-color: #eee;
+	border-bottom: solid 2px #2f2f2f;
+}
+
+.portfolio {
+	background-image: url(../img/back4.jpg);
+}
+
+/* Servicios*/
+#servicewrap {
+	display: block;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+#servicewrap h1 {
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #894681;
+}
+#servicewrap h3 {
+	text-align: center;
+/* 	margin-bottom: 20px; */
+	color: #894681;
+}
+.service {
+	text-align: left;
+}
+
+.service small {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.service i {
+	float: left;
+	margin-right: 15px;
+	font-size: 30px;
+	vertical-align: middle;
+	color: #D1D759;
+}
+
+.service .text {
+	color: #767676;
+}
+.service .text2 {
+	color: #483A66;
+}
+/* Ellas... destiando a testimonios pero lo cambiamos */
+#testimonials {
+	display: block;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	background-color: #f3f3f3;
+}
+#testimonials h3{	
+	color: #894681;
+	text-decoration: underline green;
+}
+#testimonials p{	
+color:#A979A3;
+}
+
+/*NOTICIAS Y TESTIMONIOS*/
+.desc p {
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+.desc .titu{
+	color: #483A66; 
+
+}
+
+.desc p > i {
+	font-size: 16px;
+	color: #979797;
+}
+
+.desc p > i:hover {
+	font-size: 16px;
+	color: #e74c3c;
+	cursor: pointer;
+}
+
+.desc p.lead {
+	color: #767676;
+    font-weight: 400;
+    font-size: 14px;
+}
+.b-wrapper .blanco{
+	color:##FFFFFF !important;
+}
+.desc p.time {
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 0px;
+	color: #979797;
+	text-align: right;
+}
+
+.desc p.time > i {
+	font-size: 12px;
+}
+
+hr-d {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/* Contact Wrap */
+#contactwrap {
+	background-color: #372C4E;
+	margin-top: 0px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#contactwrap p {
+	color: #f2f2f2;
+}
+
+#contactwrap small {
+	font-size: 13px;
+}
+
+.contact {
+	background-image: url(../img/connected.jpg);
+}
+
+#contactwrap label {
+	color: #f2f2f2;
+	margin-top: 10px;
+}
+
+/* Galeria..  */
+.photo-wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: #A979A3;
+  -webkit-transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+.project .overlay {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  
+}
+
+.project:hover .photo-wrapper {
+  background-color: #2f2f2f;
+	background-image:url(../img/zoom.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+}
+.project:hover .photo {
+  opacity: 10;
+  filter: alpha(opacity=4000);
+  opacity: 0.1;
+  filter: alpha(opacity=40);
+}
+.project:hover .overlay {
+  opacity: 100;
+  filter: alpha(opacity=10000);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.desc1 {
+	margin-top: 25px;
+}
+.final{
+	color: #F4DDF1 !important;
+}
